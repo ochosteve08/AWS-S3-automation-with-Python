@@ -14,7 +14,7 @@ def list_files():
     return []
 
 try:
-    # Step 1: List all files before deletion
+    # 1. List all files before deletion
     files = list_files()
 
     if files:
@@ -22,7 +22,7 @@ try:
         for i, file in enumerate(files, 1):
             print(f"{i}. {file}")
 
-        # Step 2: Get user selection
+        # 2: Get user selection
         indices = input("\nEnter the file numbers to delete (comma-separated): ")
         selected_files = [files[int(i) - 1] for i in indices.split(",") if i.strip().isdigit() and 0 < int(i) <= len(files)]
 
@@ -43,7 +43,7 @@ try:
 except client.exceptions.ClientError as e:
     print(f"\n❌ Error: {e}")
 
-# Step 3: List remaining files
+# 3: List remaining files
 remaining_files = list_files()
 if remaining_files:
     print("\n📂 Files left in bucket:")
