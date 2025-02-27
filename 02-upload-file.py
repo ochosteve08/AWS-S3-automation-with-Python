@@ -9,7 +9,7 @@ client = boto3.client('s3')
 bucket = 'esthree-2025'
 cwr_path = os.path.dirname(os.path.abspath(__file__))  # Get current script's directory
 file = 'report-lastyear.csv'
-filename = os.path.join(cwr_path, '..', 'data', file)  # Move one level up and enter 'data'
+filename = os.path.join(cwr_path, 'data', file)  
 
 # Ensure the file exists before attempting upload
 if not os.path.exists(filename):
