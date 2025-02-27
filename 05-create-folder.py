@@ -20,6 +20,6 @@ print("All objects in the bucket:")
 # Check if 'Contents' exists to avoid errors when the bucket is empty
 if 'Contents' in response:
     for obj in response['Contents']:
-        print(obj['Key'])
+        print(obj['Key'],obj['LastModified'])
 else:
     print("No objects found in the bucket.")
